@@ -1,26 +1,26 @@
 import Head from 'next/head'
 import { useState } from 'react';
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import images from '../../images.json'
 
-export default function Home() {
+
+export default function Home({films}) {
 
   const [filmList, setFilmList] = useState([])
   const [exhibit, setExhibit] = useState(0)
   const [random, setRandom] = useState(-1)
 
-  const axios = require('axios');
-  axios.get('https://ghibliapi.herokuapp.com/films').then(res => setFilmList(res.data))
+  
 
-  function printFilms(){
-    filmList.forEach((film) => {
-      console.log(film)
-    })
+  function printFilm(){
+
     setExhibit(1)
-    setRandom(randomInt(0,filmList.length-1))
+    setRandom(randomInt(0,films.length-1))
   }
   
   function randomInt(min, max) {
     return min + Math.floor((max - min) * Math.random());
+    
   }
     
 
@@ -30,15 +30,36 @@ export default function Home() {
       <p>
         
       </p>
+      
+
       {
-      exhibit ? <p>{filmList[random].title}</p> : ''
-        
-         
-        
+        exhibit ? ( 
+          <div>
+        <p>{films[random].title}</p>
+        <img src={images[films[random].title.toUpperCase()]}></img>
+      </div>
+      ) 
+      :
+      <img src="/images/all_ghibli.jpg"></img>
       }
-      <div onClick={printFilms} className={styles.divRand}>  
+      
+      <div onClick={printFilm} className={styles.divRand}>  
         <p className={styles.textRand}>Random</p>
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps(){
+  const axios = require('axios');
+  const data = await axios.get('https://ghibliapi.herokuapp.com/films')
+  const films = data.data;
+
+
+
+  return {
+    props: {
+      films
+    }
+  }
 }

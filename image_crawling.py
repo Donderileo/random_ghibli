@@ -17,7 +17,7 @@ for link in crawled:
     x = link.get('alt')
     y = link.get('data-src')
     if(x and y):
-        links[x] = y
+        links[x.upper()] = 'https://' + y[2:]
 
 
 with open('images.json', 'w') as file:
