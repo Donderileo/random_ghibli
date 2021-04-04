@@ -1,0 +1,23 @@
+.nav{
+    padding:1rem;
+    width:100%;
+    position:scroll;
+    box-shadow:0 0 1rem;
+    background-color:#fff3ff;
+    z-index:2;
+    margin:0;
+    height:5rem;
+
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+}
+
+.title{
+    font-size:1.6rem;
+    color: black;
+    font-weight: 400;
+    margin:0;
+    padding:0;
+}
