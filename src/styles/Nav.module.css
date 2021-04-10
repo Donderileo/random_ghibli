@@ -1,23 +1,21 @@
 .nav{
-    padding:1rem;
+    padding:2rem;
     width:100%;
     position:scroll;
-    box-shadow:0 0 1rem;
-    background-color:#fff3ff;
+    box-shadow:0 0 10px 1px;
+    color:var(--primary-color);
     z-index:2;
     margin:0;
-    height:5rem;
+    height:3rem;
 
     display:flex;
-    align-items:center;
-    justify-content: center;
-
+    align-items: center;
 }
 
 .title{
-    font-size:1.6rem;
-    color: black;
-    font-weight: 400;
+    font-size:1em;
+    color: var(--second-color);
+    font-weight: 700;
     margin:0;
     padding:0;
-}
+}   

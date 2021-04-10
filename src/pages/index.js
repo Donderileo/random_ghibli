@@ -27,7 +27,7 @@ export default function Home({ films }) {
 
 
   return (
-    <div>
+    <div className={styles.page}>
 
       <Nav />
 
@@ -46,12 +46,12 @@ export default function Home({ films }) {
             title=' '
           />
       }
-      <div className={styles.flexCenter}>
+      <div className={styles.btn}>
         <div onClick={printFilm} className={styles.divRand}>
           <p className={styles.textRand}>Random</p>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
