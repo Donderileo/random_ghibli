@@ -30,27 +30,36 @@ export default function Home({ films }) {
     <div className={styles.page}>
 
       <Nav />
-
-
       {
-        exhibit ? (
-          <Film
-            image={images[films[random].title.toUpperCase()]}
-            title={films[random].title}
-            desc={films[random].description}
-          />
+        exhibit && (
+          <div className={styles.container}>
+            <div className={styles.texts}>
+              <p className={styles.title}>
+                {films[random].title}
+              </p>
+              <p className={styles.description}>
+                {films[random].description}
+              </p>
+            </div>
+            <div className={styles.image}>
+              <img src={images[films[random].title.toUpperCase()]} alt="Personagens Studio Ghibli" />
+            </div>
+
+            <div className={styles.btns}>
+              <div onClick={printFilm} className={styles.divRand}>
+                <p className={styles.textRand}>Randomize!</p>
+              </div>
+
+            </div>
+
+
+          </div>
         )
-          :
-          <Film
-            image='/images/all_ghibli.jpg'
-            title=' '
-          />
       }
-      <div className={styles.btn}>
-        <div onClick={printFilm} className={styles.divRand}>
-          <p className={styles.textRand}>Random</p>
-        </div>
-      </div>
+
+
+
+
     </div >
   )
 }
