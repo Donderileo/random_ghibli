@@ -31,7 +31,7 @@ export default function Home({ films }) {
 
       <Nav />
       {
-        exhibit && (
+        exhibit ? (
           <div className={styles.container}>
             <div className={styles.texts}>
               <p className={styles.title}>
@@ -45,16 +45,42 @@ export default function Home({ films }) {
               <img src={images[films[random].title.toUpperCase()]} alt="Personagens Studio Ghibli" />
             </div>
 
-            <div className={styles.btns}>
+            <div className={styles.btn}>
               <div onClick={printFilm} className={styles.divRand}>
                 <p className={styles.textRand}>Randomize!</p>
               </div>
-
             </div>
-
-
           </div>
         )
+          :
+          (
+            <div>
+              <div className={styles.container}>
+                <div className={styles.texts}>
+                  <p className={styles.title}>
+                    Random Ghibli Generator
+                  </p>
+                  <p className={styles.description}>
+                    Studio Ghibli Inc is a Japanese animation film studio. The studio is best known for its animated feature films, and has also produced several short films, television commercials, and one television film. Studio Ghibli's highest grossing films include Spirited Away (2001), Ponyo (2008), and Howl's Moving Castle (2004).
+                    <p className={styles.invite}>
+                      Now, I invite you to watch a movie from Ghibli Studio's.
+                    </p>
+                    <p className={styles.click}>
+                      Click Randomize to start!
+                    </p>
+                  </p>
+                </div>
+                <div className={styles.logo}>
+                  <img src="/images/logo_ghibli.png" alt="Personagens Studio Ghibli" />
+                </div>
+                <div className={styles.btn}>
+                  <div onClick={printFilm} className={styles.divRand}>
+                    <p className={styles.textRand}>Randomize!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
       }
 
 

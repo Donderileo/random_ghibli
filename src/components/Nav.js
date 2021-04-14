@@ -4,10 +4,14 @@ import styles from '../styles/Nav.module.css';
 import images from '../../images.json'
 export default function Nav() {
 
+    function returnToHome() {
+        window.location.replace('/');
+    }
+
     return (
-        <div className={styles.nav}>
+        <div OnClick={returnToHome} className={styles.nav}>
             <p className={styles.title}>Random Ghibli Generator</p>
 
-        </div>
+        </div >
     )
 }
