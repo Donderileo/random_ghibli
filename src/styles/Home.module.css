@@ -36,7 +36,7 @@
   box-shadow:7px 10px 20px 8px var(--primary-color);
   border-radius:10px;
   display:block;
-  max-width: 100%;
+  max-width: 80%;
   height:80%;
 }
 
