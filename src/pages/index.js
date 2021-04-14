@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 import images from '../../images.json'
-import Film from '../components/Film';
 import Nav from '../components/Nav';
 
 
@@ -15,14 +14,13 @@ export default function Home({ films }) {
 
 
   function printFilm() {
-
+    window.scrollTo(0, 0);
     setExhibit(1)
     setRandom(randomInt(0, films.length - 1))
   }
 
   function randomInt(min, max) {
     return min + Math.floor((max - min) * Math.random());
-
   }
 
 
