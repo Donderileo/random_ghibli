@@ -3,7 +3,7 @@
     width:100%;
     position:scroll;
     box-shadow:0 0 10px 1px;
-    color:var(--primary-color);
+    color:var(--second-color);
     z-index:2;
     margin:0;
     height:3rem;
@@ -14,7 +14,7 @@
 
 .title{
     font-size:1em;
-    color: var(--second-color);
+    color: var(--primary-color);
     font-weight: 700;
     margin:0;
     padding:0;

@@ -1,0 +1,33 @@
+.banner{
+  display:flex;
+  justify-content:center;
+  
+}
+
+.title{
+  border-top:2px solid var(--accent-button);
+  border-bottom:2px solid var(--accent-button);
+  width:70vw;
+  color:var(--second-color-bold);
+  font-size:4rem;
+  font-weight:500;
+
+  display:flex;
+  justify-content:center;
+
+  margin-bottom:8rem;
+}
+
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 8rem;
+  margin:0 5rem;
+}
+
+@media (max-width:768px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+}

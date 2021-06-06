@@ -9,7 +9,7 @@ export default function Nav() {
     }
 
     return (
-        <div OnClick={returnToHome} className={styles.nav}>
+        <div onClick={returnToHome} className={styles.nav}>
             <p className={styles.title}>Random Ghibli Generator</p>
 
         </div >

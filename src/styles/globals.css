@@ -2,12 +2,15 @@
 
 :root{
   --background:#f5f5f5;
-  --primary-color:#7B7485;
-  --second-color:#040078;
-  --accent:#A20003;
-  --accent-two:#D20B5A;
+  --primary-color:#040078;
+  --second-color:#7B7485;
+  --second-color-bold:#00112e;
+  --accent-text:#9B0C43;
+  --accent-button:#D20B5A;
 }
-
+html{
+  font-size: 75%;
+}
 
 html,
 body {
@@ -28,4 +31,10 @@ a {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 
+}
+
+@media (min-width:1000px) {
+  html{
+    font-size:100%;
+  }
 }
