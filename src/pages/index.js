@@ -101,7 +101,7 @@ export default function Home({ films }) {
       {/* CSS after this: Home2.module.css */}
 
       <div data-aos="fade-right" className={styles2.banner} >
-        <h1 className={styles2.title}>ALL MOVIES</h1>
+        <h1 className={styles2.title}>All Movies</h1>
       </div>
       <div className={styles2.grid}>
         {films.map((film, index) => (
