@@ -1,7 +1,6 @@
 .banner{
   display:flex;
   justify-content:center;
-  
 }
 
 .title{
@@ -29,5 +28,9 @@
 @media (max-width:768px){
   .grid{
     grid-template-columns: 1fr;
+  }
+  
+  .title{
+    font-size:3rem;
   }
 }
