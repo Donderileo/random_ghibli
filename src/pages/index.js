@@ -10,17 +10,29 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import Film from '../components/Film';
 
-
 export default function Home({ films }) {
 
-  const [filmList, setFilmList] = useState([])
+
   const [exhibit, setExhibit] = useState(0)
   const [random, setRandom] = useState(-1)
 
   function printFilm() {
     window.scrollTo(0, 0);
+
     setExhibit(1)
     setRandom(randomInt(0, films.length - 1))
+  }
+
+  function changeFilm(id) {
+
+    films.map((film, index) => {
+      if (film.id === id) {
+        setExhibit(1);
+        setRandom(index);
+        window.scrollTo(0, 0);
+      }
+    })
+
   }
 
   function randomInt(min, max) {
@@ -32,7 +44,7 @@ export default function Home({ films }) {
   });
 
   return (
-    <div >
+    <div className={styles.flex} id="topo">
 
       {/* Parte inicial - Randomização. */}
 
@@ -40,7 +52,7 @@ export default function Home({ films }) {
         <Nav />
         {
           exhibit ? (
-            <div className={styles.container}>
+            <div className={styles.container} key={random}>
               <div className={styles.texts}>
                 <p className={styles.title}>
                   {films[random].title}
@@ -63,7 +75,7 @@ export default function Home({ films }) {
             :
             (
               <div>
-                <div className={styles.container}>
+                <div className={styles.containerDefault}>
                   <div className={styles.texts}>
                     <p className={styles.title}>
                       Random Ghibli Generator
@@ -105,12 +117,13 @@ export default function Home({ films }) {
       </div>
       <div className={styles2.grid}>
         {films.map((film, index) => (
-          <div data-aos="fade-in">
+          <div data-aos="fade-in" key={film.id} onClick={() => { changeFilm(film.id) }} >
             <Film
               key={film.id}
               film={film}
             />
           </div>
+
         ))}
       </div>
     </div >
@@ -121,6 +134,8 @@ export async function getServerSideProps() {
   const axios = require('axios');
   const data = await axios.get('https://ghibliapi.herokuapp.com/films')
   const films = data.data;
+
+
 
   return {
     props: {

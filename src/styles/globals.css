@@ -10,6 +10,7 @@
 }
 html{
   font-size: 75%;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -38,3 +39,4 @@ a {
     font-size:100%;
   }
 }
+

@@ -7,7 +7,7 @@
     z-index:2;
     margin:0;
     height:3rem;
-
+    cursor:pointer;
     display:flex;
     align-items: center;
 }

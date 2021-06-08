@@ -10,21 +10,19 @@ export default function Filmont(props) {
     const [rtScore, setRtScore] = useState(props.film.rt_score);
     const [runningTime, setRunningTime] = useState(props.film.running_time);
 
-
-
     return (
         <div className={styles.container}>
-            <img className={styles.img} src={images[title.toUpperCase()]} alt="Capa do Filme" />
-            <p className={styles.title}>
+            <img className={styles.img} src={images[title.toUpperCase()]} alt={title} />
+            <p className={styles.title} >
                 {title}, <span className={styles.release}>
                     {release}
                 </span>
             </p>
-            <div className={styles.line2}>
-                <p className={styles.time}>
+            <div className={styles.line2} >
+                <p className={styles.time} >
                     {runningTime} min
                 </p>
-                <p className={styles.score}>
+                <p className={styles.score} >
                     {rtScore}<FontAwesomeIcon icon={faStar} className={styles.star} />
                 </p>
             </div>
