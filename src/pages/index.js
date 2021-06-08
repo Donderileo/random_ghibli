@@ -75,7 +75,7 @@ export default function Home({ films }) {
             :
             (
               <div>
-                <div className={styles.containerDefault}>
+                <div className={styles.container}>
                   <div className={styles.texts}>
                     <p className={styles.title}>
                       Random Ghibli Generator
